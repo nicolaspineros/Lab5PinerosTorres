@@ -12,14 +12,26 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import edu.eci.cvds.servlet.model.*;
+
+@WebServlet(
+    urlPatterns = "/clase"
+)
+
 /**
  *
  * @author Lenovo
  */
 public class Clase extends HttpServlet{
+    
    
    @Override
    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+       int id = Integer.parseInt(req.getParameter("id"));
+       Service servicio = new Service();
+       Todo algo = servicio.getTodo(id);
    }
+   
+   
    
 }
