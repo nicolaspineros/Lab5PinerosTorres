@@ -21,3 +21,13 @@
 0:0:0:0:0:0:0:1 - - [27/Feb/2021:08:35:24 -0500] "GET /edu/eci/cvds/servlet/run:SampleServlet.java HTTP/1.1" 404 1037 http-bio-8080-exec-1 2
 0:0:0:0:0:0:0:1 - - [27/Feb/2021:08:35:58 -0500] "GET /edu/eci/cvds/servlet/test/SampleServlet.java?name=%22Oscar%22 HTTP/1.1" 404 1039 http-bio-8080-exec-1 2
 0:0:0:0:0:0:0:1 - - [27/Feb/2021:08:37:02 -0500] "GET /edu/eci/cvds/servlet/SampleServlet.java?name=%22Oscar%22 HTTP/1.1" 304 - http-bio-8080-exec-9 2
+0:0:0:0:0:0:0:1 - - [27/Feb/2021:09:16:56 -0500] "GET /edu/eci/cvds/servlet/SampleServlet.java?name=%22Oscar%22 HTTP/1.1" 404 1029 http-bio-8080-exec-2 46
+0:0:0:0:0:0:0:1 - - [27/Feb/2021:09:17:04 -0500] "GET /SampleServlet?name=%22Oscar%22 HTTP/1.1" 404 977 http-bio-8080-exec-3 4
+0:0:0:0:0:0:0:1 - - [27/Feb/2021:09:17:19 -0500] "GET /SampleServlet HTTP/1.1" 404 977 http-bio-8080-exec-4 2
+0:0:0:0:0:0:0:1 - - [27/Feb/2021:09:19:18 -0500] "GET /SampleServlet HTTP/1.1" 404 977 http-bio-8080-exec-2 53
+0:0:0:0:0:0:0:1 - - [27/Feb/2021:09:19:20 -0500] "GET /SampleServlet HTTP/1.1" 404 977 http-bio-8080-exec-3 2
+0:0:0:0:0:0:0:1 - - [27/Feb/2021:09:22:00 -0500] "GET /helloServlet HTTP/1.1" 200 16 http-bio-8080-exec-6 14
+0:0:0:0:0:0:0:1 - - [27/Feb/2021:09:22:32 -0500] "GET /helloServlet?name=%22Oscar%22 HTTP/1.1" 200 23 http-bio-8080-exec-7 1
+0:0:0:0:0:0:0:1 - - [27/Feb/2021:09:22:46 -0500] "GET /helloServlet?name=Oscar HTTP/1.1" 200 21 http-bio-8080-exec-8 1
+192.168.0.6 - - [27/Feb/2021:09:31:47 -0500] "GET / HTTP/1.1" 200 52 http-bio-8080-exec-10 75
+192.168.0.6 - - [27/Feb/2021:09:32:03 -0500] "GET /HNAP1/ HTTP/1.1" 404 963 http-bio-8080-exec-3 2
