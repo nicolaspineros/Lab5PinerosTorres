@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import edu.eci.cvds.servlet.model.*;
+import java.net.MalformedURLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(
     urlPatterns = "/clase"
@@ -24,14 +27,27 @@ import edu.eci.cvds.servlet.model.*;
  */
 public class Clase extends HttpServlet{
     
+   protected List<Todo> todoList = new ArrayList<Todo>();
    
    @Override
    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       int id = Integer.parseInt(req.getParameter("id"));
-       Service servicio = new Service();
-       Todo algo = servicio.getTodo(id);
+       Writer responseWriter = resp.getWriter();
+       
+       try {
+           int id = Integer.parseInt(req.getParameter("id"));
+           Service servicio = new Service();
+           Todo tid = servicio.getTodo(id);
+           todoList.add(tid);
+           resp.setStatus(200);
+           responseWriter.write(servicio.todosToHTMLTable(todoList));
+       } catch (IllegalArgumentException iae) {
+           resp.setStatus(400);
+       } catch (MalformedURLException murle) {
+           resp.setStatus(500);
+       } catch (NullPointerException npe) {
+           resp.setStatus(404);
+           responseWriter.write("NO EXISTE UN ITEM CON EL IDENTIFICADOR DADO");
+       }
    }
-   
-   
-   
+
 }
