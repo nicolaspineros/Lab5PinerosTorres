@@ -30,20 +30,20 @@ public class Clase extends HttpServlet{
        Writer responseWriter = resp.getWriter();
        
        try {
-           int id = Integer.parseInt(req.getParameter("id"));
-           Service servicio = new Service();
-           Todo tid = servicio.getTodo(id);
+           int id = Integer.parseInt(req.getParameter("id"));         
+           Todo tid = Service.getTodo(id);
            todoList.add(tid);
            resp.setStatus(200);
-           responseWriter.write(servicio.todosToHTMLTable(todoList));
+           responseWriter.write(Service.todosToHTMLTable(todoList));
        } catch (IllegalArgumentException iae) {
            resp.setStatus(400);
+           responseWriter.write("REQUERIMIENTO INVALIDO");
        } catch (MalformedURLException murle) {
            resp.setStatus(500);
+           responseWriter.write("ERROR INTERNO EN EL SERVIDOR");
        } catch (NullPointerException npe) {
            resp.setStatus(404);
            responseWriter.write("NO EXISTE UN ITEM CON EL IDENTIFICADOR DADO");
        }
    }
-
 }
