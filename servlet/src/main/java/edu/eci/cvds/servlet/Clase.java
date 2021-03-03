@@ -21,10 +21,6 @@ import java.util.List;
     urlPatterns = "/clase"
 )
 
-/**
- *
- * @author Lenovo
- */
 public class Clase extends HttpServlet{
     
    protected List<Todo> todoList = new ArrayList<Todo>();
