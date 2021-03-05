@@ -15,10 +15,20 @@ xmlns:p="http://primefaces.org/ui">
     </h:head>
     <h:body>
         <h:form id="guess_form">
-            <p:outputLabel value="#{aplicationBean.numeroRandom}" style="display:none"/>
-            <p:outputLabel value="#{aplicationBean.intentos}" style="font-weight:bold"/>
-            <p:outputLabel value="#{aplicationBean.estado}" style="font-weight:bold"/>
-            <p:outputLabel value="#{aplicationBean.acumulado}" style="font-weight:bold"/>
+            <p:outputLabel value="numerorandom: #{aplicationBean.numeroRandom}" style="display:none"/>
+            <br/>
+            
+            <p:inputText id="escriba el numero:" value="#{aplicationBean.intento}​​​​"/>
+            <br/>
+            <p:outputLabel value="numero de intentos: #{aplicationBean.intentos}" style="font-weight:bold"/>
+            <br/>
+            <p:outputLabel value="estado: #{aplicationBean.estado}" style="font-weight:bold"/>
+            <br/>
+            <p:outputLabel value="acumulado: #{aplicationBean.acumulado}" style="font-weight:bold"/>
+            <br/>
+            <p:commandButton update="guess_form" actionListener="#{guessBean.guess}"/>
+            <p:commandButton update="guess_form" actionListener="#{guessBean.restart}"/>
+                
         </h:form>
     </h:body>
 </html>

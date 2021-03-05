@@ -1,8 +1,9 @@
 package bean;
 
 import java.util.Random;
-import javax.faces.bean.ManagedBean;
+import javax.faces.bean.*;        
 
+@ApplicationScoped
 @ManagedBean
 public class AplicationBean {
     
@@ -11,12 +12,13 @@ public class AplicationBean {
     private int acumulado = 100000;
     private String estado = "";
     private int numeroRandom = numero.nextInt(10);
+    private int intento;
     
     public AplicationBean(){
         
     }
     
-    public void guess(int intento){
+    public void guess(){
         if(intentos > 10){
             setEstado("PERDIÓ");
             restart();
@@ -68,6 +70,14 @@ public class AplicationBean {
 
     public int getNumeroRandom() {
         return numeroRandom;
+    }
+    
+    public int getIntento(){
+        return intento;
+    }
+    
+    public void setIntento(int intento){
+        this.intento = intento;
     }
     
     
