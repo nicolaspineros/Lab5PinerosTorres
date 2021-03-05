@@ -1,13 +1,13 @@
 package bean;
 
 import java.util.Random;
-import javax.faces.bean.*;        
+import javax.faces.bean.*;
 
 @ApplicationScoped
-@ManagedBean
+@ManagedBean(name = "guessBean")
 public class AplicationBean {
     
-    private Random numero = new Random();
+    private final Random numero = new Random();
     private int intentos = 0;
     private int acumulado = 100000;
     private String estado = "";
