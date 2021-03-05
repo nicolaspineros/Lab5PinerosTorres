@@ -4,7 +4,7 @@ import java.util.Random;
 import javax.faces.bean.*;
 
 @ApplicationScoped
-@ManagedBean(name = "guessBean")
+@ManagedBean(name = "aplicationBean")
 public class AplicationBean {
     
     private final Random numero = new Random();
@@ -12,7 +12,8 @@ public class AplicationBean {
     private int acumulado = 100000;
     private String estado = "";
     private int numeroRandom = numero.nextInt(10);
-    private int intento;
+    private int intento = 5;
+    private int valor = 4;
     
     public AplicationBean(){
         
@@ -22,11 +23,11 @@ public class AplicationBean {
         if(intentos > 10){
             setEstado("PERDIÓ");
             restart();
-        }else if(intento < 0 | intento > 10){
+        }else if(valor < 0 | valor > 10){
             intentos += 1;
             setEstado("Seleccione un número mayor o igual a 0 y menor que 10");
             acumulado -= 10000;
-        }else if(intento==numeroRandom){
+        }else if(valor==numeroRandom){
             intentos += 1;
             setEstado("GANÓ");
             restart();
@@ -79,6 +80,15 @@ public class AplicationBean {
     public void setIntento(int intento){
         this.intento = intento;
     }
+
+    public int getValor() {
+        return valor;
+    }
+
+    public void setValor(int valor) {
+        this.valor = valor;
+    }
+    
     
     
 }

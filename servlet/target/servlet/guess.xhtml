@@ -1,13 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-xmlns:h="http://xmlns.jcp.org/jsf/html"
-xmlns:p="http://primefaces.org/ui">
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
 
     <h:head>
         <title>TODO supply a title</title>
@@ -17,7 +13,8 @@ xmlns:p="http://primefaces.org/ui">
         <h:form id="guess_form">
             <p:outputLabel value="numerorandom: #{aplicationBean.numeroRandom}" style="display:none"/>
             <br/>
-            <p:inputText value="#{aplicationBean.intento}​​​​"/>
+            <p:outputLabel value="valor: #{aplicationBean.valor}" />
+            <p:inputText value="#{aplicationBean.valor}​​​​"/>
             <br/>
             <p:outputLabel value="numero de intentos: #{aplicationBean.intentos}" style="font-weight:bold"/>
             <br/>
@@ -25,8 +22,9 @@ xmlns:p="http://primefaces.org/ui">
             <br/>
             <p:outputLabel value="acumulado: #{aplicationBean.acumulado}" style="font-weight:bold"/>
             <br/>
-            <p:commandButton update="guess_form" value="Enviar" actionListener="#{guessBean.guess()}"/>
-            <p:commandButton update="guess_form" value="Reiniciar" actionListener="#{guessBean.restart()}"/>
+            <p:commandButton update="guess_form" value="Enviar" actionListener="#{aplicationBean.guess()}"/>
+            <p:commandButton update="guess_form" value="Reiniciar" actionListener="#{aplicationBean.restart()}"/>
+            
         </h:form>
     </h:body>
 </html>
