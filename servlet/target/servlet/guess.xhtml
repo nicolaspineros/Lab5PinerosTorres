@@ -24,7 +24,12 @@
             <br/>
             <p:commandButton update="guess_form" value="Enviar" actionListener="#{aplicationBean.guess()}"/>
             <p:commandButton update="guess_form" value="Reiniciar" actionListener="#{aplicationBean.restart()}"/>
-            
+            <br/>
+            <p:dataTable var ="intentos" value="#{aplicationBean.listintentos}">                
+                <p:column headerText="Ultimos Intentos">                    
+                    <h:outputText value="#{aplicationBean.listintentos}" />                    
+                </p:column>
+            </p:dataTable>
         </h:form>
     </h:body>
 </html>

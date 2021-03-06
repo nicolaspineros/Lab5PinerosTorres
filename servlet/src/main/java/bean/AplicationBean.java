@@ -1,5 +1,7 @@
 package bean;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import javax.faces.bean.*;
 
@@ -11,9 +13,9 @@ public class AplicationBean {
     private int intentos = 0;
     private int acumulado = 100000;
     private String estado = "";
-    private int numeroRandom = numero.nextInt(10);
-    private int intento = 5;
-    private int valor = 4;
+    private int numeroRandom = numero.nextInt(10);    
+    private int valor = 0;
+    private List<Integer> listintentos = new ArrayList<>();
     
     public AplicationBean(){
         
@@ -27,6 +29,7 @@ public class AplicationBean {
             intentos += 1;
             setEstado("Seleccione un número mayor o igual a 0 y menor que 10");
             acumulado -= 10000;
+            listintentos.add(valor);
         }else if(valor==numeroRandom){
             intentos += 1;
             setEstado("GANÓ");
@@ -35,7 +38,9 @@ public class AplicationBean {
             intentos += 1;
             setEstado("ESTE NO ES EL NÚMERO");
             acumulado -= 10000;
+            listintentos.add(valor);
         }
+        
     }
     
     public void restart(){
@@ -43,6 +48,7 @@ public class AplicationBean {
         setIntentos(0);
         setAcumulado(100000);
         setEstado("");
+        listintentos = new ArrayList<>();
     }
 
     public int getIntentos() {
@@ -72,13 +78,15 @@ public class AplicationBean {
     public int getNumeroRandom() {
         return numeroRandom;
     }
-    
-    public int getIntento(){
-        return intento;
+
+    public List<Integer> getListintentos() {
+        if (listintentos.isEmpty()) {
+            return null;
+        }else{return listintentos;}        
     }
-    
-    public void setIntento(int intento){
-        this.intento = intento;
+
+    public void setListintentos(List<Integer> listintentos) {
+        this.listintentos = listintentos;
     }
 
     public int getValor() {

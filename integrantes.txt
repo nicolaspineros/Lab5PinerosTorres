@@ -1,0 +1,16 @@
+Torres Castro Cristhian
+Piñeros Campo Nicolas
+
+el metodo GET se encarga de requerir datos de una fuente especifica, por otro lado
+el metodo POST se usa para mandar datos y crear o actualizar los recursos.
+
+existen estos otros metodos:
+
+PUT: cumple una funcion similar al post ya que crea y actualiza pero produce el 
+mismo resultado en multiples llamados
+
+HEAD: hace los mismos requerimientos de un GET pero con diferente retorno
+
+DELETE: borra un recurso especifico
+
+OPTIONS: especifica las opciones de comunicacion con el recurso  
